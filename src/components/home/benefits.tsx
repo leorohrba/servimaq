@@ -84,6 +84,8 @@ const BenefitsSection: React.FC = () => {
           <SimpleGrid
             mt="96px"
             mb="96px"
+            justifyItems="center"
+            mx="auto"
             columns={{ base: 1, sm: 2, lg: 4 }}
             gap={6}
           >

@@ -78,7 +78,7 @@ const ContactPage: React.FC = () => {
                 py={3}
                 borderRadius="md"
                 fontWeight="bold"
-                _hover={{ bg: "yellow.500" }}
+                _hover={{ bg: "#FFD54F" }}
                 display="inline-flex"
                 alignItems="center"
               >
@@ -176,12 +176,12 @@ const ContactPage: React.FC = () => {
         </Container>
       </Box>
       {/* Map Section */}
-      <Box py={6} mb={12}>
-        <Container maxW="container.xl" px={0}>
+      <Box mb={12}>
+        {/* <Container maxW="container.xl" px={0}> */}
           <AspectRatio ratio={16 / 7} w="100%">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3574.9201762307666!2d-48.829371599999995!3d-26.3614437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94deb6cfe0aadcad%3A0x93058ce4ebafdf13!2sAluguel%20de%20Andaimes%20-%20Joinville%20e%20Araquari!5e0!3m2!1spt-BR!2sbr!4v1749224220006!5m2!1spt-BR!2sbr"
-              //   width="600"
+                width="100%"
               style={{ border: 0 }}
               //   height="450"
               allowFullScreen
@@ -197,7 +197,7 @@ const ContactPage: React.FC = () => {
               referrerPolicy="no-referrer-when-downgrade"
             /> */}
           </AspectRatio>
-        </Container>
+        {/* </Container> */}
       </Box>
 
       <Footer />

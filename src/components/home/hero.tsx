@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
               color="brand.blue.100"
               size="lg"
               borderRadius="md"
-              _hover={{ bg: "yellow.500" }}
+              _hover={{ bg: "#FFD54F" }}
               px={6}
             >
               <FaWhatsapp />

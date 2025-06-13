@@ -66,7 +66,7 @@ const WhyChooseUs: React.FC = () => {
           //   mb={12}
           mt={{ base: "80px", md: "80px", lg: "96px" }}
           mb={{ base: "80px", md: "80px", lg: "100px" }}
-          fontSize={{ base: "2xl", md: "60px" }}
+          fontSize={{ base: "32px", md: "48px", lg: "60px" }}
           color="#1E50A0"
           fontFamily="cofo-kabeltouw-solid-0, sans-serif"
           textTransform="uppercase"

@@ -1,4 +1,6 @@
 import React, { useRef } from "react";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {
   Box,
   Container,
@@ -10,6 +12,7 @@ import {
   Icon,
   Image,
   IconButton,
+  Link,
 } from "@chakra-ui/react";
 import {
   FaStar,
@@ -129,12 +132,6 @@ const TestimonialCard: React.FC<{ testimonial: TestimonialData }> = ({
           <Avatar.Fallback name={testimonial.name} />
           <Avatar.Image src={testimonial.imageSrc} />
         </Avatar.Root>
-        {/* <Avatar
-          src={testimonial.imageSrc}
-          name={testimonial.name}
-          size="md"
-          mr={3}
-        /> */}
         <Box ml={3}>
           <Text fontWeight="bold" fontSize="md">
             {testimonial.name}
@@ -182,51 +179,140 @@ const GoogleReviewsWidget: React.FC = () => {
     }
   };
 
+  const arrowStyles = {
+    position: 'absolute',
+    zIndex: 2,
+    top: 'calc(50% - 15px)',
+    width: '40px',
+    height: '40px',
+    cursor: 'pointer',
+    backgroundColor: 'white',
+    borderRadius: '50%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
+  };
+
   return (
     <Box bg="#f2f2f2" py={12}>
       {/* <Container> */}
-        <Heading
-          as="h2"
-          textAlign="center"
-          mb="96px"
-          fontSize={{ base: "32px", md: "48px", lg: "60px" }}
-          mt="96px"
-          color="brand.blue.100"
-          fontFamily="cofo-kabeltouw-solid-0, sans-serif"
-          lineHeight="1.2"
+      <Heading
+        as="h2"
+        textAlign="center"
+        mb="96px"
+        fontSize={{ base: "32px", md: "48px", lg: "60px" }}
+        mt="96px"
+        color="brand.blue.100"
+        fontFamily="cofo-kabeltouw-solid-0, sans-serif"
+        lineHeight="1.2"
+      >
+        VEJA O QUE DIZEM NOSSOS CLIENTES
+      </Heading>
+
+      <Box position="relative">
+      <Carousel
+          infiniteLoop
+          centerMode
+          centerSlidePercentage={100}
+          showStatus={false}
+          showThumbs={false}
+          interval={5000}
+          transitionTime={500}
+          swipeable
+          emulateTouch
+          selectedItem={0}
+          renderArrowPrev={(onClickHandler, hasPrev, label) =>
+            hasPrev && (
+              <div
+                onClick={onClickHandler}
+                title={label}
+                style={{
+                  ...arrowStyles,
+                  left: 15,
+                }}
+              >
+                <FaChevronLeft color="#0047BB" />
+              </div>
+            )
+          }
+          renderArrowNext={(onClickHandler, hasNext, label) =>
+            hasNext && (
+              <div
+                onClick={onClickHandler}
+                title={label}
+                style={{
+                  ...arrowStyles,
+                  right: 15,
+                }}
+              >
+                <FaChevronRight color="#0047BB" />
+              </div>
+            )
+          }
+          renderIndicator={(clickHandler, isSelected, index, label) => (
+            <div
+              onClick={clickHandler}
+              key={index}
+              style={{
+                height: "0.5rem",
+                width: "0.5rem",
+                borderRadius: "8px",
+                display: "inline-block",
+                margin: "0 8px",
+                backgroundColor: isSelected ? "#0047BB" : "#E0E0E0",
+              }}
+            ></div>
+          )}
+          className="testimonials-carousel"
         >
-          VEJA O QUE DIZEM NOSSOS CLIENTES
-        </Heading>
+          {/* Group testimonials in sets of 3 for larger screens, 2 for medium, 1 for small */}
+          {(() => {
+            const items = [];
+            const testimonialsPerSlide = window?.innerWidth > 768 ? 3 : window?.innerWidth > 480 ? 2 : 1;
+            
+            for (let i = 0; i < testimonials.length; i += testimonialsPerSlide) {
+              const group = testimonials.slice(i, i + testimonialsPerSlide);
+              items.push(
+                <div key={`group-${i}`}>
+                  <Flex 
+                    justifyContent="center" 
+                    alignItems="stretch"
+                    flexWrap="wrap"
+                    gap={4}
+                    mx="auto"
+                    px={4}
+                    py={2}
+                  >
+                    {group.map(testimonial => (
+                      <Box 
+                        key={testimonial.id} 
+                        flex="1"
+                        minW={{ base: "100%", md: "45%", lg: "30%" }}
+                        maxW={{ base: "100%", md: "45%", lg: "30%" }}
+                      >
+                        <TestimonialCard testimonial={testimonial} />
+                      </Box>
+                    ))}
+                  </Flex>
+                </div>
+              );
+            }
+            return items;
+          })()}
+        </Carousel>
+      </Box>
 
-        <Box position="relative">
-          <Flex
-            ref={scrollRef}
-            overflowX="auto"
-            pb={6}
-            w={"100%"}
-            css={{
-              "&::-webkit-scrollbar": {
-                display: "none",
-              },
-              scrollbarWidth: "none",
-              msOverflowStyle: "none",
-            }}
-          >
-            {testimonials.map((testimonial) => (
-              <TestimonialCard key={testimonial.id} testimonial={testimonial} />
-            ))}
-          </Flex>
-        </Box>
-
-        <Flex justifyContent="center" alignItems="center" mt={12} fontSize="md">
-          <Flex alignItems="center">
+      <Flex justifyContent="center" alignItems="center" mt={12} fontSize="md">
+        <Flex alignItems="center">
+          <Link href="https://g.co/kgs/HAU9aAp" target="blank">
             <Image
               src="/images/Home/google.png"
               alt="Google Reviews"
               height="32px"
               mr={4}
               pb={0}
-              ></Image>
+            ></Image>
             <HStack gap={2}>
               {Array(5)
                 .fill("")
@@ -237,8 +323,9 @@ const GoogleReviewsWidget: React.FC = () => {
             <Text ml={6} fontWeight="light">
               4.9 - 116 avaliações
             </Text>
-          </Flex>
+          </Link>
         </Flex>
+      </Flex>
       {/* </Container> */}
     </Box>
   );

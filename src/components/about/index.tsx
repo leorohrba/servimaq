@@ -43,6 +43,7 @@ const AboutPage: React.FC = () => {
       <Box bg="brand.lightGray.100" py={12}>
         <Container maxW="container.xl">
           <Flex
+            m={"96px"}
             direction={{ base: "column", lg: "row" }}
             gap={{ base: 6, lg: 12 }}
             align="center"
@@ -64,7 +65,6 @@ const AboutPage: React.FC = () => {
                 fontWeight="bold"
                 fontFamily="cofo-kabeltouw-solid-0, sans-serif"
                 lineHeight="1.2"
-                mb={6}
               >
                 SEU PARCEIRO DE CONFIANÇA EM OBRAS HÁ MAIS DE 10 ANOS
               </Heading>
@@ -112,12 +112,15 @@ const AboutPage: React.FC = () => {
             fontWeight="bold"
             fontFamily="cofo-kabeltouw-solid-0, sans-serif"
             lineHeight="1.2"
-            mb={12}
+            mt={"96px"}
+            mb={"96px"}
           >
             O NOSSO COMPROMETIMENTO É COM VOCÊ
           </Heading>
 
-          <SimpleGrid columns={{ base: 1, md: 3 }} gap={10}>
+          <SimpleGrid columns={{ base: 1, md: 3 }} gap={10} mb="96px"
+            justifyItems="center"
+            mx="auto">
             <Box
               bg="white"
               p={8}
@@ -222,7 +225,8 @@ const AboutPage: React.FC = () => {
             fontWeight="bold"
             fontFamily="cofo-kabeltouw-solid-0, sans-serif"
             lineHeight="1.2"
-            mb={12}
+            mt={"96px"}
+            mb={"96px"}
           >
             MARCAS PARCEIRAS
           </Heading>
@@ -231,7 +235,8 @@ const AboutPage: React.FC = () => {
             columns={{ base: 2, sm: 3, lg: 4 }}
             gap={24}
             // maxW="900px"
-            mx="auto"
+            // mx="auto"
+            mb={"96px"}
           >
             {brandLogos.map((logo, index) => (
               <Box

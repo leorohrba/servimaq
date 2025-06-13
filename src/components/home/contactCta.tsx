@@ -19,7 +19,7 @@ const ContactCta: React.FC = () => {
               as="h2"
               mt={{ base: "80px", md: "80px", lg: "96px" }}
               mb={{ base: "10px", md: "20px", lg: "24px" }}
-              fontSize={{ base: "2xl", md: "60px" }}
+              fontSize={{ base: "32px", md: "48px", lg: "60px" }}
               fontFamily="cofo-kabeltouw-solid-0, sans-serif"
               fontWeight="bold"
               lineHeight="1.2"
