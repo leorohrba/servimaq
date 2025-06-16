@@ -3,7 +3,6 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {
   Box,
-  Container,
   Heading,
   Flex,
   Text,
@@ -11,14 +10,12 @@ import {
   HStack,
   Icon,
   Image,
-  IconButton,
   Link,
 } from "@chakra-ui/react";
 import {
   FaStar,
   FaChevronLeft,
   FaChevronRight,
-  FaGoogle,
 } from "react-icons/fa";
 
 interface TestimonialData {
@@ -121,9 +118,7 @@ const TestimonialCard: React.FC<{ testimonial: TestimonialData }> = ({
       bg="white"
       borderRadius="24px"
       p={5}
-      // w="350px"
       minW="350px"
-      // maxW="350px"
       h="220px"
       mr={4}
     >
@@ -153,8 +148,6 @@ const TestimonialCard: React.FC<{ testimonial: TestimonialData }> = ({
           ))}
       </HStack>
       <Text
-        // fontSize="sm"
-        // noOfLines={4}
         overflowY={"scroll"}
         maxHeight="100px"
         textOverflow="ellipsis"
@@ -266,7 +259,6 @@ const GoogleReviewsWidget: React.FC = () => {
           )}
           className="testimonials-carousel"
         >
-          {/* Group testimonials in sets of 3 for larger screens, 2 for medium, 1 for small */}
           {(() => {
             const items = [];
             const testimonialsPerSlide = window?.innerWidth > 768 ? 3 : window?.innerWidth > 480 ? 2 : 1;

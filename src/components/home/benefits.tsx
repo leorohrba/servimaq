@@ -10,8 +10,6 @@ import {
   Icon,
   Image,
 } from "@chakra-ui/react";
-import { FaHammer } from "react-icons/fa";
-import { IconType } from "react-icons";
 
 const BenefitsSection: React.FC = () => {
   const statsData = [
@@ -48,10 +46,8 @@ const BenefitsSection: React.FC = () => {
             NOSSOS NÚMEROS NÃO ENGANAM
           </Heading>
           <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} gap={8} mb="96px">
-            {/* <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}> */}
             {statsData.map((stat, index) => (
               <VStack key={index} gap={2}>
-                {/* <VStack key={index} spacing={2}> */}
                 <Text
                   fontSize="6xl"
                   fontWeight="bold"
@@ -71,7 +67,6 @@ const BenefitsSection: React.FC = () => {
           <Heading
             as="h2"
             mt="96px"
-            // mb="96px"
             fontSize={{ base: "32px", md: "48px", lg: "60px" }}
             fontWeight="bold"
             fontFamily="cofo-kabeltouw-solid-0, sans-serif"

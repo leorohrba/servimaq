@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   Box,
   Flex,
-  Button,
   HStack,
   Link,
   Image,
@@ -11,9 +10,6 @@ import {
   Portal,
   CloseButton,
   Drawer,
-  // DrawerBody,
-  // DrawerContent,
-  // DrawerCloseButton,
   VStack,
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
@@ -68,7 +64,6 @@ const Header: React.FC = () => {
         {isMobile ? (
           <IconButton
             aria-label="Open menu"
-            // _icon={<FaHamburger />}
             onClick={onOpen}
             variant="ghost"
             size="lg"
@@ -89,11 +84,6 @@ const Header: React.FC = () => {
           </HStack>
         )}
       </Flex>
-        {/* <Drawer.Trigger asChild>
-          <Button variant="outline" size="sm">
-            Open Drawer
-          </Button>
-        </Drawer.Trigger> */}
 
       {/* Mobile Drawer */}
       <Drawer.Root open={open} onOpenChange={(e) => setOpen(e.open)}>

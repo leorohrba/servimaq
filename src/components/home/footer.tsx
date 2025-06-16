@@ -12,7 +12,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
-import { FaInstagram, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
+import { FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();

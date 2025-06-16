@@ -6,10 +6,8 @@ import {
   SimpleGrid,
   VStack,
   Text,
-  Icon,
   Image,
 } from "@chakra-ui/react";
-import { FaTools, FaHeadset, FaTag, FaTruck } from "react-icons/fa";
 
 interface FeatureProps {
   icon: React.ReactNode;
@@ -63,7 +61,6 @@ const WhyChooseUs: React.FC = () => {
         <Heading
           as="h2"
           textAlign="center"
-          //   mb={12}
           mt={{ base: "80px", md: "80px", lg: "96px" }}
           mb={{ base: "80px", md: "80px", lg: "100px" }}
           fontSize={{ base: "32px", md: "48px", lg: "60px" }}

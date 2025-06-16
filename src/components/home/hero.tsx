@@ -6,15 +6,18 @@ const Hero: React.FC = () => {
   return (
     <Box
       bg="brand.lightGray.100"
-      bgImage="url('/images/Home/home.jpg')"
-      backgroundPosition="center"
+      bgImage={{
+        base: "url('/images/Home/banner.jpg')",
+        lg: "url('/images/Home/home.jpg')",
+      }}
+      backgroundPosition={{ base: "bottom", lg: "center" }}
       bgRepeat="no-repeat"
       bgSize="cover"
       py={20}
       // px={8}
       position="relative"
       width="100%"
-      height="100%"
+      height={{ base: "80vh", lg: "100%" }}
     >
       <Container
         my={{ base: "auto", md: "auto", lg: "96px" }}
@@ -23,8 +26,6 @@ const Hero: React.FC = () => {
         <Flex>
           <Box
             maxW="600px"
-            // mx={0}
-            // p={8}
           >
             <Heading
               as="h1"
@@ -45,7 +46,6 @@ const Hero: React.FC = () => {
                 fontWeight="light"
                 fontSize={{ base: "20px", md: "22px", lg: "24px" }}
                 mb={{ base: "20px", md: "20px", lg: "48px" }}
-                // whiteSpace="nowrap"
               >
                 Alugue com quem{" "}
                 <Text as="span" fontWeight="bold">

@@ -4,13 +4,9 @@ import {
   Container,
   Heading,
   Text,
-  VStack,
   Image,
-  Grid,
   SimpleGrid,
   Flex,
-  Icon,
-  HStack,
 } from "@chakra-ui/react";
 import Header from "../home/header";
 import Footer from "../home/footer";
@@ -40,10 +36,10 @@ const AboutPage: React.FC = () => {
       <Header />
 
       {/* Hero Section */}
-      <Box bg="brand.lightGray.100" py={12}>
+      <Box bg="brand.lightGray.100" py={{base: 2, lg: 12}}>
         <Container maxW="container.xl">
           <Flex
-            m={"96px"}
+            m={{base: "12px", lg: "96px"}}
             direction={{ base: "column", lg: "row" }}
             gap={{ base: 6, lg: 12 }}
             align="center"
@@ -234,8 +230,6 @@ const AboutPage: React.FC = () => {
           <SimpleGrid
             columns={{ base: 2, sm: 3, lg: 4 }}
             gap={24}
-            // maxW="900px"
-            // mx="auto"
             mb={"96px"}
           >
             {brandLogos.map((logo, index) => (
@@ -258,10 +252,8 @@ const AboutPage: React.FC = () => {
         </Container>
       </Box>
 
-      {/* Reuse ContactCta Component */}
       <ContactCta />
 
-      {/* Reuse Footer Component */}
       <Footer />
     </Box>
   );

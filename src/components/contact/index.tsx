@@ -7,14 +7,12 @@ import {
   Image,
   Flex,
   VStack,
-  HStack,
   Link,
   AspectRatio,
 } from "@chakra-ui/react";
 import Header from "../home/header";
 import Footer from "../home/footer";
 import { FaWhatsapp } from "react-icons/fa";
-import ContactCta from "../home/contactCta";
 
 const ContactPage: React.FC = () => {
   return (
@@ -96,9 +94,7 @@ const ContactPage: React.FC = () => {
           <Flex
             direction={{ base: "column", md: "row" }}
             alignItems="flex-start"
-            // gap={5}
           >
-            {/* <HStack gap={24}> */}
             {/* Contact */}
             <VStack align="flex-start" alignItems="flex-start" gap={4} flex="1">
               <VStack align="center">
@@ -171,33 +167,21 @@ const ContactPage: React.FC = () => {
                 <Text fontSize="lg">89235-000</Text>
               </Box>
             </VStack>
-            {/* </HStack> */}
           </Flex>
         </Container>
       </Box>
       {/* Map Section */}
       <Box mb={12}>
-        {/* <Container maxW="container.xl" px={0}> */}
           <AspectRatio ratio={16 / 7} w="100%">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3574.9201762307666!2d-48.829371599999995!3d-26.3614437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94deb6cfe0aadcad%3A0x93058ce4ebafdf13!2sAluguel%20de%20Andaimes%20-%20Joinville%20e%20Araquari!5e0!3m2!1spt-BR!2sbr!4v1749224220006!5m2!1spt-BR!2sbr"
                 width="100%"
               style={{ border: 0 }}
-              //   height="450"
               allowFullScreen
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
-            {/* <iframe
-              title="Servimaq Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.415973814687!2d-48.84731632544297!3d-26.27605487706458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94deb11a670539db%3A0x2c5f970d82f1f349!2sAluguel%20de%20Andaimes%20Joinville%20e%20Araquari!5e0!3m2!1spt-BR!2sbr!4v1717433333090!5m2!1spt-BR!2sbr"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            /> */}
           </AspectRatio>
-        {/* </Container> */}
       </Box>
 
       <Footer />
