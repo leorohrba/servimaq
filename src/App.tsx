@@ -19,6 +19,18 @@ function App() {
           name="description"
           content="Há mais de 10 anos locando equipamentos com agilidade e confiança para obras em Joinville e região."
         />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-745470874"
+        ></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-745470874');
+          `}
+        </script>
       </Helmet>
       <Router>
         <Routes>
