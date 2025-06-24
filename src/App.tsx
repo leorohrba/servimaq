@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./components/home/";
 import AboutPage from "./components/about/";
 import ProductsPage from "./components/products/";
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import ContactPage from "./components/contact";
 // import theme from './components/themed'; // Assuming you have a theme file
 import { system } from "./components/theme"; // Importing the theme
